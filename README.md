@@ -1,7 +1,11 @@
 # Synapse for LogSeq
 
 <div align="center">
+<<<<<<< HEAD
   <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/logo.png" alt="Synapse Logo" width="150"/>
+=======
+  <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/SynapseLogo.png" alt="Synapse Logo" width="150"/>
+>>>>>>> 21006dfa627df27d24922d91937407e20a03908d
   <h3>Extending Human Cognition Through AI + Knowledge Graphs</h3>
   <p>
     <a href="https://www.synapse4ai.xyz">Website</a> •
@@ -203,12 +207,6 @@ If you find Synapse valuable, please consider:
     <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="Sponsor gtrgit"/>
   </a>
 </div>
-
-```html
-<iframe src="https://github.com/sponsors/gtrgit/button" title="Sponsor gtrgit" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
-```
-
-Add the above iframe code to your website to display the sponsor button.
 
 ---
 
