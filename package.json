@@ -1,0 +1,23 @@
+{
+  "name": "synapse-logseq",
+  "version": "0.1.0",
+  "description": "Synapse for LogSeq - AI-powered knowledge assistant",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "logseq",
+    "plugin",
+    "ai",
+    "claude"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "logseq": {
+    "id": "synapse-ai",
+    "title": "Synapse for LogSeq",
+    "icon": "SynapseLogo.png"
+  },
+  "logo": "SynapseLogo.png"
+}
