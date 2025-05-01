@@ -23,6 +23,9 @@
 
 With Synapse, AI responses are fully integrated into your knowledge graph through intelligent auto-linking, context-aware responses, and automatic entity page creation.
 
+![Synapse for AI](./kevb.gif)
+
+
 ### What is LogSeq?
 
 LogSeq is an open-source knowledge management application that works on top of local plain-text Markdown files. It's designed around linking concepts together in a graph structure, similar to how your brain connects ideas. Unlike traditional note-taking apps, LogSeq allows you to create a network of interconnected thoughts, making it ideal for personal knowledge management, research, and learning. Synapse enhances LogSeq by adding AI capabilities that understand and integrate with this knowledge graph structure.
