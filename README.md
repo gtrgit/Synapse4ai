@@ -1,7 +1,7 @@
 # Synapse for LogSeq
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/synapse4ai/main/logo.png" alt="Synapse Logo" width="150"/>
+  <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/logo.png" alt="Synapse Logo" width="150"/>
   <h3>Extending Human Cognition Through AI + Knowledge Graphs</h3>
   <p>
     <a href="https://www.synapse4ai.xyz">Website</a> •
@@ -11,9 +11,9 @@
     <a href="#configuration">Configuration</a>
   </p>
   <p>
-    <img src="https://img.shields.io/github/v/release/yourusername/synapse4ai" alt="Version"/>
-    <img src="https://img.shields.io/github/license/yourusername/synapse4ai" alt="License"/>
-    <img src="https://img.shields.io/github/issues/yourusername/synapse4ai" alt="Issues"/>
+    <img src="https://img.shields.io/github/v/release/gtrgit/synapse4ai" alt="Version"/>
+    <img src="https://img.shields.io/github/license/gtrgit/synapse4ai" alt="License"/>
+    <img src="https://img.shields.io/github/issues/gtrgit/synapse4ai" alt="Issues"/>
   </p>
 </div>
 
@@ -61,7 +61,7 @@ With Synapse, AI responses are fully integrated into your knowledge graph throug
 #### Method 2: Manual Installation
 
 1. **Download Synapse**
-   - Go to the [Releases page](https://github.com/yourusername/synapse4ai/releases)
+   - Go to the [Releases page](https://github.com/gtrgit/synapse4ai/releases)
    - Download the latest release zip file
 
 2. **Install in LogSeq**
@@ -177,9 +177,9 @@ This will provide an inline response about graph-based note-taking without creat
 
 ### Getting Help
 
-- Report issues on [GitHub](https://github.com/yourusername/synapse4ai/issues)
-- Join our [Discord community](https://discord.gg/synapse4ai)
-- Contact support at support@synapse4ai.xyz
+- Report issues on [GitHub](https://github.com/gtrgit/synapse4ai/issues)
+- Join our [Discord community](https://discord.gg/DNTHsGZeGR)
+- Contact support at grant@netrunners.xyz
 
 ## Privacy & Security
 
@@ -196,10 +196,23 @@ Synapse for LogSeq is licensed under the MIT License. See [LICENSE](LICENSE) for
 If you find Synapse valuable, please consider:
 - Starring the repository on GitHub
 - Sharing with fellow LogSeq users
-- [Becoming a sponsor](https://github.com/sponsors/yourusername)
+- Becoming a sponsor:
+
+<div align="center">
+  <a href="https://github.com/sponsors/gtrgit">
+    <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white" alt="Sponsor gtrgit"/>
+  </a>
+</div>
+
+```html
+<iframe src="https://github.com/sponsors/gtrgit/button" title="Sponsor gtrgit" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+```
+
+Add the above iframe code to your website to display the sponsor button.
 
 ---
 
 <div align="center">
   <p>SYNAPSE4AI © 2025 - EXTENDING HUMAN COGNITION</p>
+  <p>Created by <a href="https://github.com/gtrgit">Grant Ryan</a></p>
 </div>
