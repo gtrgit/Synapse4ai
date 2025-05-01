@@ -1,7 +1,7 @@
 {
-  "name": "synapse-logseq",
+  "name": "Synapse for AI",
   "version": "0.1.0",
-  "description": "Synapse for LogSeq - AI-powered knowledge assistant",
+  "description": "Synapse for AI - AI-powered knowledge assistant. For more infomation visit Synapse4ai.xyz",
   "main": "index.html",
   "scripts": {
     "build": "echo 'No build step required'"
@@ -12,11 +12,11 @@
     "ai",
     "claude"
   ],
-  "author": "Your Name",
+  "author": "Grant Ryan",
   "license": "MIT",
   "logseq": {
     "id": "synapse-ai",
-    "title": "Synapse for LogSeq",
+    "title": "Synapse for AI",
     "icon": "SynapseLogo.png"
   },
   "logo": "SynapseLogo.png"
