@@ -6,6 +6,10 @@
   "scripts": {
     "build": "echo 'No build step required'"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gtrgit/Synapse4ai"
+  },
   "keywords": [
     "logseq",
     "plugin",
