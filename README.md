@@ -1,4 +1,4 @@
-# Synapse for LogSeq
+# Synapse for AI
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/SynapseLogo.png" alt="Synapse Logo" width="150"/>
@@ -22,6 +22,10 @@
 **Synapse** creates a bidirectional interface between your personal knowledge graph in LogSeq and powerful AI models like Claude, OpenAI, and Grok. It goes beyond simple AI chat by implementing a Tag-Based Gravity System that creates semantic relationships between concepts in your knowledge base.
 
 With Synapse, AI responses are fully integrated into your knowledge graph through intelligent auto-linking, context-aware responses, and automatic entity page creation.
+
+### What is LogSeq?
+
+LogSeq is an open-source knowledge management application that works on top of local plain-text Markdown files. It's designed around linking concepts together in a graph structure, similar to how your brain connects ideas. Unlike traditional note-taking apps, LogSeq allows you to create a network of interconnected thoughts, making it ideal for personal knowledge management, research, and learning. Synapse enhances LogSeq by adding AI capabilities that understand and integrate with this knowledge graph structure.
 
 ## Installation
 
