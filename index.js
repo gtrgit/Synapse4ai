@@ -1,3 +1,16 @@
+// ```
+//   _____                                  _  _        _ 
+//  / ____|                                | || |      (_)
+// | (___  _   _ _ __   __ _ _ __  ___  ___| || |_ __ _ _ 
+//  \___ \| | | | '_ \ / _` | '_ \/ __|/ _ \__   _/ _` | |
+//  ____) | |_| | | | | (_| | |_) \__ \  __/  | || (_| | |
+// |_____/ \__, |_| |_|\__,_| .__/|___/\___|  |_| \__,_|_|
+//          __/ |           | |                           
+//         |___/            |_|                           
+// ```
+// by Grant Ryan
+// www.Synapse4ai.xyz
+
 // Global instances
 let api = null;
 let autoLinker = null;
@@ -743,28 +756,6 @@ async function processPrompt(prompt, blockUuid, context = "") {
 async function main() {
   console.log("Synapse for LogSeq initializing...");
 
-  // Add custom header styles to reduce text size
-  // addCustomHeaderStyles();
-  // testAndDebugStyles();
-  // adjustHeaderSize();
-  // improveSynapseHeader()
-  // reduceSynapseHeaderSize()
-   // Reduce only the Synapse header text size
-  //  makeHeaderSynapseSmaller();
-  
-  //  debugHeaderElements()
-
-  //  setTimeout(emergencyTargetAllSynapseHeader, 2000);
- // Set up auto-unpinning of the Synapse tab
-//  unpinSynapseTab();
-//  unpinSynapseOnStartup() 
-
-
-// hideSynapseTab();
-// removeSynapseFromHeader() 
-// removeSynapseTabs()
-// removeSynapseTab() 
-
   // Initialize helper classes
   autoLinker = new AutoLinker();
   await autoLinker.loadExistingConcepts();
@@ -780,39 +771,6 @@ async function main() {
 
 
   
-//   // Register settings schema
-//   logseq.useSettingsSchema([
-//     {
-//       key: "provider",
-//       type: "enum",
-//       title: "AI Provider",
-//       description: "Select which AI provider to use",
-//       default: "claude",
-//       enumChoices: ["claude", "openai", "grok"],
-//       enumPicker: "select"
-//     },
-//     {
-//       key: "apiKey",
-//       type: "string",
-//       title: "API Key",
-//       description: "Your API key for the selected provider",
-//       inputAs: "password"
-//     },
-//     {
-//       key: "autoLinking",
-//       type: "boolean",
-//       title: "Auto-Linking",
-//       description: "Automatically add [[brackets]] around concepts",
-//       default: true
-//     },
-//     {
-//       key: "createEntityPages",
-//       type: "boolean",
-//       title: "Create Entity Pages",
-//       description: "Automatically create pages for entities in responses",
-//       default: true
-//     }
-//   ]);
   
   // Initialize API with settings if available
   if (logseq.settings?.apiKey) {
@@ -1244,124 +1202,6 @@ async function main() {
   );
 
 
-// // Register provider-specific slash commands
-// logseq.Editor.registerSlashCommand(
-//     'provider_claude',
-//     async () => {
-//       await setProvider('claude');
-//     }
-//   );
-  
-//   logseq.Editor.registerSlashCommand(
-//     'provider_openai',
-//     async () => {
-//       await setProvider('openai');
-//     }
-//   );
-  
-//   logseq.Editor.registerSlashCommand(
-//     'provider_grok',
-//     async () => {
-//       await setProvider('grok');
-//     }
-//   );
-
-//   // Register provider selection command with block content parsing
-// logseq.Editor.registerSlashCommand(
-//     'provider',
-//     async () => {
-//       try {
-//         const block = await logseq.Editor.getCurrentBlock();
-//         if (!block) return;
-        
-//         // Extract provider name from block content
-//         const blockContent = block.content || "";
-//         const providerMatch = blockContent.match(/\/provider\s+(\w+)/);
-//         const provider = providerMatch ? providerMatch[1].toLowerCase() : "";
-        
-//         console.log("Block content:", blockContent);
-//         console.log("Extracted provider:", provider);
-        
-//         // Validate provider
-//         if (!provider || !['claude', 'openai', 'grok'].includes(provider)) {
-//           await logseq.Editor.updateBlock(
-//             block.uuid,
-//             `⚠️ Please specify a valid provider: claude, openai, or grok.\nExample: /provider claude`
-//           );
-//           logseq.UI.showMsg("Please specify a valid provider", "warning");
-//           return;
-//         }
-        
-//         // Get current settings
-//         const currentSettings = await logseq.settings;
-        
-//         // Update settings with new active provider
-//         const updatedSettings = {
-//           ...currentSettings,
-//           activeProvider: provider
-//         };
-        
-//         // Save updated settings
-//         await logseq.updateSettings(updatedSettings);
-        
-//         // Get the provider-specific key
-//         const keyName = `${provider}ApiKey`;
-//         const hasKey = updatedSettings[keyName] && updatedSettings[keyName].length > 10;
-        
-//         // Update block with confirmation and status
-//         await logseq.Editor.updateBlock(
-//           block.uuid,
-//           `✅ Provider set to: ${provider} ${hasKey ? '(API key configured)' : '(⚠️ API key missing)'}`
-//         );
-        
-//         // Update API instance if it exists
-//         if (api) {
-//           api.provider = provider;
-//           api.apiKey = api.getApiKeyForProvider(updatedSettings);
-//           api.model = api.getDefaultModel();
-          
-//           // Check if we have a key for this provider
-//           if (api.apiKey) {
-//             console.log(`API updated to use ${api.provider} model: ${api.model}`);
-//             logseq.UI.showMsg(`Now using ${provider}`, "success");
-//           } else {
-//             console.log(`Warning: No API key found for ${provider}`);
-//             logseq.UI.showMsg(`Switched to ${provider} but no API key found. Please set up an API key.`, "warning");
-//           }
-//         } else {
-//           // Initialize API if it doesn't exist
-//           api = new AIConnector(updatedSettings);
-//           if (api.apiKey) {
-//             console.log(`API initialized with provider: ${provider}`);
-//             logseq.UI.showMsg(`Now using ${provider}`, "success");
-//           } else {
-//             console.log(`Warning: No API key found for ${provider}`);
-//             logseq.UI.showMsg(`Switched to ${provider} but no API key found. Please set up an API key.`, "warning");
-//           }
-//         }
-        
-//         // Update the provider indicator
-//         updateProviderIndicator();
-        
-//       } catch (error) {
-//         console.error("Error setting provider:", error);
-//         logseq.UI.showMsg(`Error: ${error.message}`, "error");
-        
-//         // Update block with error message
-//         try {
-//           const block = await logseq.Editor.getCurrentBlock();
-//           if (block && block.uuid) {
-//             await logseq.Editor.updateBlock(
-//               block.uuid,
-//               `❌ Error setting provider: ${error.message}`
-//             );
-//           }
-//         } catch (err) {
-//           console.error("Failed to update block with error:", err);
-//         }
-//       }
-//     }
-//   );
   
   // Register save key command with improved block content parsing
   logseq.Editor.registerSlashCommand(
@@ -1476,157 +1316,6 @@ async function main() {
   );
 
 
-//   logseq.Editor.registerSlashCommand(
-//     'provider',
-//     async () => { // Note: No argument parameter here
-//       try {
-//         const block = await logseq.Editor.getCurrentBlock();
-//         if (!block) return;
-        
-//         // Extract provider name from block content
-//         const blockContent = block.content || "";
-//         const providerMatch = blockContent.match(/\/provider\s+(\w+)/);
-//         const provider = providerMatch ? providerMatch[1].toLowerCase() : "";
-        
-//         // If no provider specified in the block, show options
-//         if (!provider || !['claude', 'openai', 'grok'].includes(provider)) {
-//           await logseq.Editor.updateBlock(
-//             block.uuid,
-//             `⚠️ Please specify a valid provider: claude, openai, or grok.\nExample: /provider claude`
-//           );
-//           logseq.UI.showMsg("Please specify a valid provider", "warning");
-//           return;
-//         }
-        
-//         // Rest of your code remains the same...
-//         // Get current settings
-//         const currentSettings = await logseq.settings;
-        
-//         // Update settings with new provider
-//         const updatedSettings = {
-//           ...currentSettings,
-//           activeProvider: provider
-//         };
-        
-//         await logseq.updateSettings(updatedSettings);
-        
-//         // Get the provider-specific key
-//         const keyName = `${provider}ApiKey`;
-//         const hasKey = updatedSettings[keyName] && updatedSettings[keyName].length > 10;
-        
-//         // Update block with confirmation
-//         await logseq.Editor.updateBlock(
-//           block.uuid,
-//           `✅ Provider set to: ${provider} ${hasKey ? '(API key configured)' : '(⚠️ API key missing)'}`
-//         );
-        
-//         // Update API instance...
-//         // Rest of your implementation
-//       } catch (error) {
-//         console.error("Error setting provider:", error);
-//         logseq.UI.showMsg(`Error: ${error.message}`, "error");
-//       }
-//     }
-//   );
-
-
-
-
-// // Register save key command with provider support and improved feedback
-// logseq.Editor.registerSlashCommand(
-//     'savekey',
-//     async (e) => {
-//       try {
-//         const block = await logseq.Editor.getCurrentBlock();
-//         if (!block) return;
-        
-//         // Extract provider from command if specified
-//         let providerArg = null;
-//         if (typeof e === 'string') {
-//           // If argument was passed like "/savekey grok", parse it
-//           providerArg = e.trim().toLowerCase();
-//           if (!['claude', 'openai', 'grok'].includes(providerArg)) {
-//             providerArg = null; // Invalid provider specified
-//           }
-//         }
-        
-//         // Get API key from block content
-//         let apiKey = block.content || "";
-        
-//         // Handle various formats the key could be in
-//         apiKey = apiKey
-//           .replace("Type your Claude API key here and run `/savekey claude`", "")
-//           .replace("Type your OpenAI API key here and run `/savekey openai`", "")
-//           .replace("Type your Grok API key here and run `/savekey grok`", "")
-//           .replace("Type your API key here and run /savekey", "")
-//           .trim();
-        
-//         // Validate API key
-//         if (!apiKey || apiKey.length < 10) {
-//           await logseq.Editor.updateBlock(
-//             block.uuid,
-//             `⚠️ Invalid API key. Please enter a valid key (at least 10 characters).`
-//           );
-//           logseq.UI.showMsg("Invalid API key - must be at least 10 characters", "warning");
-//           return;
-//         }
-        
-//         // Get current settings to determine active provider
-//         const settings = await logseq.settings;
-        
-//         // Use specified provider or fall back to active provider
-//         const provider = providerArg || settings.activeProvider || settings.provider || 'claude';
-        
-//         // Set the provider-specific key
-//         const keyName = `${provider}ApiKey`;
-        
-//         // Update settings with new key
-//         const updatedSettings = { 
-//           ...settings,
-//           [keyName]: apiKey,
-//           // Also set this as active provider if there isn't one already
-//           activeProvider: settings.activeProvider || provider
-//         };
-        
-//         await logseq.updateSettings(updatedSettings);
-        
-//         // Mask the key in the block
-//         const maskedKey = `****${apiKey.slice(-4)}`;
-//         await logseq.Editor.updateBlock(
-//           block.uuid,
-//           `✅ ${provider.charAt(0).toUpperCase() + provider.slice(1)} API key saved: ${maskedKey}`
-//         );
-        
-//         // Reinitialize API with updated settings
-//         api = new AIConnector(await logseq.settings);
-        
-//         // Show success message
-//         logseq.UI.showMsg(`${provider.charAt(0).toUpperCase() + provider.slice(1)} API key saved successfully`, "success");
-        
-//         // Update the provider indicator
-//         updateProviderIndicator();
-        
-//       } catch (error) {
-//         console.error("Error saving API key:", error);
-//         logseq.UI.showMsg(`Error: ${error.message}`, "error");
-        
-//         // Update block with error message
-//         try {
-//           const block = await logseq.Editor.getCurrentBlock();
-//           if (block && block.uuid) {
-//             await logseq.Editor.updateBlock(
-//               block.uuid,
-//               `❌ Error saving API key: ${error.message}`
-//             );
-//           }
-//         } catch (err) {
-//           console.error("Failed to update block with error:", err);
-//         }
-//       }
-//     }
-//   );
-
-
 
 
   // Function to reload settings
@@ -1664,44 +1353,21 @@ async function main() {
   
 
 
-
-
-  // Register UI icon in toolbar
-  // logseq.App.registerUIItem('toolbar', {
-  //   key: 'synapse',
-  //   template: '<a class="button" data-on-click="showSettings">Synapse</a>'
-  // });
-  
-//   // Register UI icon in toolbar with logo image
-// logseq.App.registerUIItem('toolbar', {
-//   key: 'synapse',
-//   template: '<a class="button" data-on-click="showSettings"><img src="./SynapseLogo.png" alt="Synapse" style="height: 30px; vertical-align: middle;"></a>'
-// });
-// Register UI icon in toolbar with inline SVG
-
-
-// logseq.App.registerUIItem('toolbar', {
-//   key: 'synapse',
-//   template: '<a class="button" data-on-click="showSettings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="currentColor"/></svg></a>'
-// });
-
-
-// // Register UI icon in toolbar with SVG file
-// logseq.App.registerUIItem('toolbar', {
-//   key: 'synapse',
-//   template: '<a class="button" data-on-click="showSettings"><img src="./icons/Synapse.svg" alt="Synapse" style="height: 20px; vertical-align: middle;"></a>'
-// });
-
-// // Register UI icon with SVG file and fallback
-// logseq.App.registerUIItem('toolbar', {
-//   key: 'synapse',
-//   template: '<a class="button" data-on-click="showSettings"><img src="./synapse.svg" alt="Synapse" style="height: 20px; vertical-align: middle;" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<span style=\\\'font-size: 0.7em;\\\'>Synapse</span>\'"></a>'
-// });
-
-// logseq.App.registerUIItem('toolbar', {
-//   key: 'synapse',
-//   template: '<a class="button" data-on-click="showSettings"></a>'
-// });
+    //   o
+    //   / \
+    // /   \
+    // /     \
+    // /       \
+    // /         \
+    // o           o
+    // / \         /
+    // /   \       /
+    // /     \     /
+    // o       o   o
+    // \     / \ /
+    // \   /   o
+    // \ /
+    // o
 
 
 // Register UI icon in toolbar with embedded network graph SVG
@@ -1822,47 +1488,6 @@ async function updateProviderIndicator() {
     setTimeout(updateProviderIndicator, 1000); // Initial update
   }
 
-  // // 2. Make sure you have the addProviderStatusIndicator function defined
-  // function addProviderStatusIndicator() {
-  //   // Add custom CSS for the indicator
-  //   logseq.provideStyle(`
-  //     .provider-indicator {
-  //       display: inline-block;
-  //       width: 8px;
-  //       height: 8px;
-  //       border-radius: 50%;
-  //       margin-left: 5px;
-  //     }
-  //     .provider-active {
-  //       background-color: #4CAF50;
-  //     }
-  //     .provider-missing {
-  //       background-color: #F44336;
-  //     }
-  //     .provider-name {
-  //       margin-left: 5px;
-  //       font-size: 12px;
-  //     }
-  //   `);
-  
-  //   // Register UI item for toolbar
-  //   logseq.App.registerUIItem('toolbar', {
-  //     key: 'synapse',
-  //     template: `
-  //       <div class="synapse-status">
-  //         <a class="button" data-on-click="showSettings">
-  //           <span>Synapse</span>
-  //           <span class="provider-name" id="provider-name"></span>
-  //           <span class="provider-indicator" id="provider-indicator"></span>
-  //         </a>
-  //       </div>
-  //     `
-  //   });
-    
-  //   // Update the indicator when settings change
-  //   logseq.on('settings:changed', updateProviderIndicator);
-  //   setTimeout(updateProviderIndicator, 1000); // Initial update
-  // }
   
   // 3. Only then register the provider commands that use these functions
   logseq.Editor.registerSlashCommand(
@@ -1953,78 +1578,6 @@ async function updateProviderIndicator() {
       logseq.UI.showMsg(`Error: ${error.message}`, "error");
     }
   }
-
-    // // Enhanced version of the provider status indicator using vanilla JS
-    // function addProviderStatusIndicator() {
-    //     // Add custom CSS for the indicator
-    //     logseq.provideStyle(`
-    //     .provider-indicator {
-    //         display: inline-block;
-    //         width: 8px;
-    //         height: 8px;
-    //         border-radius: 50%;
-    //         margin-left: 5px;
-    //     }
-    //     .provider-active {
-    //         background-color: #4CAF50;
-    //     }
-    //     .provider-missing {
-    //         background-color: #F44336;
-    //     }
-    //     .provider-name {
-    //         margin-left: 5px;
-    //         font-size: 12px;
-    //     }
-    //     `);
-    
-    //     // Register UI item for toolbar
-    //     logseq.App.registerUIItem('toolbar', {
-    //     key: 'synapse',
-    //     template: `
-    //         <div class="synapse-status">
-    //         <a class="button" data-on-click="showSettings">
-    //             <span>Synapse</span>
-    //             <span class="provider-name" id="provider-name"></span>
-    //             <span class="provider-indicator" id="provider-indicator"></span>
-    //         </a>
-    //         </div>
-    //     `
-    //     });
-        
-    //     // Update the indicator when settings change
-    //     logseq.on('settings:changed', updateProviderIndicator);
-    //     setTimeout(updateProviderIndicator, 1000); // Initial update
-    // }
-    
-    // // Update provider indicator with current status
-    // async function updateProviderIndicator() {
-    //     try {
-    //     const settings = await logseq.settings;
-    //     const activeProvider = settings.activeProvider || settings.provider || 'claude';
-    //     const providerKey = `${activeProvider}ApiKey`;
-        
-    //     const hasValidKey = settings[providerKey] && settings[providerKey].length > 10;
-        
-    //     // Update the indicator in DOM
-    //     const indicator = document.getElementById('provider-indicator');
-    //     const nameEl = document.getElementById('provider-name');
-        
-    //     if (indicator && nameEl) {
-    //         // Update indicator color
-    //         indicator.className = `provider-indicator ${hasValidKey ? 'provider-active' : 'provider-missing'}`;
-            
-    //         // Update provider name
-    //         nameEl.textContent = activeProvider.charAt(0).toUpperCase() + activeProvider.slice(1);
-            
-    //         // Update tooltip
-    //         indicator.title = `Using ${activeProvider}${hasValidKey ? '' : ' (API key missing)'}`;
-    //     }
-    //     } catch (error) {
-    //     console.error("Error updating provider indicator:", error);
-    //     }
-    // }
-
-    
 
 
 
@@ -2364,44 +1917,6 @@ async generateResponse(prompt, context = {}) {
   }
 
 
-
-
-//   /**
-//    * Generate a response using the configured provider
-//    * @param {string} prompt - User prompt
-//    * @param {Object} context - Optional context information
-//    * @returns {Promise<string|Object>} Generated response (string or object with title/response)
-//    */
-//   async generateResponse(prompt, context = {}) {
-//     if (!this.apiKey) {
-//       throw new Error(`No API key configured for ${this.provider}. Please use /apikey to set it up.`);
-//     }
-    
-//     console.log(`Generating response with ${this.provider} model: ${this.model}`);
-    
-//     // INVERTED LOGIC: Check if knowledge graph mode is explicitly turned OFF
-//     // Default is now ON unless specified with --kgoff flag
-//     const kgModeOff = prompt.toLowerCase().includes("--kgoff") || 
-//                       context.knowledgeGraphModeOff === true;
-    
-//     // Use knowledge graph mode by default unless explicitly turned off
-//     if (!kgModeOff) {
-//       console.log("Using knowledge graph response mode (default)");
-//       return this.generateKnowledgeGraphResponse(prompt.replace(/--kg/gi, "").trim(), context);
-//     }
-    
-//     // If KG mode is off, use standard response for each provider
-//     // First remove the --kgoff flag from the prompt
-//     const cleanPrompt = prompt.replace(/--kgoff/gi, "").trim();
-//     console.log("Knowledge graph mode OFF, using standard response");
-    
-//     switch(this.provider) {
-//       case 'claude': return this.generateClaudeResponse(cleanPrompt, context);
-//       case 'openai': return this.generateOpenAIResponse(cleanPrompt, context);
-//       case 'grok': return this.generateGrokResponse(cleanPrompt, context);
-//       default: return this.generateClaudeResponse(cleanPrompt, context);
-//     }
-//   }
   
   /**
  * Generate a knowledge graph enhanced response
