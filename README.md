@@ -1,7 +1,7 @@
 # Synapse for AI
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/SynapseLogo.png" alt="Synapse Logo" width="150"/>
+  <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/synapseIcon.png" alt="Synapse Logo" width="150"/>
   <h3>Extending Human Cognition Through AI + Knowledge Graphs</h3>
   <p>
     <a href="https://www.synapse4ai.xyz">Website</a> •
@@ -72,15 +72,20 @@ LogSeq is an open-source knowledge management application that works on top of l
    - Download the latest release zip file
 
 2. **Install in LogSeq**
+
+    **NOTE:** Developer mode is required to add a local plugin manually. Go to top-right ...
+Settings/Advanced/Developer mode = On
+
    - Open LogSeq
    - Click on the three dots (⋮) in the right sidebar
    - Select "Plugins"
-   - Click on "Load unpacked plugin"
+   - Click on "Load unpacked plugin". If not available, see NOTE below.
    - Select the downloaded zip file
 
-3. **Enable the Plugin**
+4. **Enable the Plugin**
    - After installation, click the toggle to enable Synapse
    - Restart LogSeq to apply changes
+  
 
 ## Features
 
