@@ -984,7 +984,7 @@ async function updateProviderIndicator() {
             key: "website",
             type: "heading",
             title: "Synapse for AI",
-            description: "For more information and to **Donate** to this project visit <a href='https://synapse4ai.xyz' target='_blank'>synapse4ai.xyz</a>"
+            description: "For more information visit <a href='https://synapse4ai.xyz' target='_blank'>synapse4ai.xyz</a>"
         },
         {
             key: "activeProvider",
