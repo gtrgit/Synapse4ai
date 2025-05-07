@@ -8,24 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add this line to explicitly set permissions
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Check for files
-        run: |
-          ls -la
-          cat LICENSE
-      
+      - uses: actions/checkout@v3  # Update to v3
       - name: Build plugin
         run: |
           mkdir -p dist
-          cp -r *.js *.json SynapseLogo.png README.md LICENSE dist/ || echo "Some files might not exist"
+          cp -r *.js *.json *.png README.md LICENSE dist/ || echo "Some files might not exist"
           ls -la dist/
-      
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             dist/**/*
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
