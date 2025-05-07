@@ -10,10 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Check for files
+        run: |
+          ls -la
+          cat LICENSE
+      
       - name: Build plugin
         run: |
           mkdir -p dist
-          cp -r *.js *.json *.png README.md LICENSE dist/
+          cp -r *.js *.json SynapseLogo.png README.md LICENSE dist/ || echo "Some files might not exist"
+          ls -la dist/
+      
       - name: Create release
         uses: softprops/action-gh-release@v1
         with:
