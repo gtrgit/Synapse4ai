@@ -9,35 +9,46 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add this line to fix the 403 error
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3  # Updated to v3
         with:
-          node-version: '18.x' # You might need to adjust this value to your own version
+          fetch-depth: 0  # Fetch all history for all tags and branches
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v3  # Updated to v3
+        with:
+          node-version: '18.x'  # Using a more stable version
+      
       - name: Build
         id: build
         run: |
-            mkdir ${{ env.PLUGIN_NAME }}
-            cp README.md package.json ${{ env.PLUGIN_NAME }} || true
-            cp icon.png index.html ${{ env.PLUGIN_NAME }} || true
-            cp SynapseLogo.png ${{ env.PLUGIN_NAME }} || true
-            cp -r scripts ${{ env.PLUGIN_NAME }} || true
-            cp -r stylesheets ${{ env.PLUGIN_NAME }} || true
-            cp index.js ${{ env.PLUGIN_NAME }} || true
-            zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
-            ls
-            echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+          mkdir ${{ env.PLUGIN_NAME }}
+          
+          # Use || true to continue if files don't exist
+          cp README.md ${{ env.PLUGIN_NAME }} || true
+          cp package.json ${{ env.PLUGIN_NAME }} || true
+          cp SynapseLogo.png ${{ env.PLUGIN_NAME }} || true
+          cp LICENSE ${{ env.PLUGIN_NAME }} || true
+          cp index.js ${{ env.PLUGIN_NAME }} || true
+          
+          # Create zip
+          zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
+          ls -la
+          
+          # Fix for the deprecated set-output command
+          echo "tag_name=$(git tag --sort version:refname | tail -n 1)" >> $GITHUB_OUTPUT
+      
       - name: Create Release
         uses: ncipollo/release-action@v1
         id: create_release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ github.ref }}
         with:
           allowUpdates: true
           draft: false
           prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Upload zip file
         id: upload_zip
         uses: actions/upload-release-asset@v1
@@ -48,6 +59,7 @@ jobs:
           asset_path: ./${{ env.PLUGIN_NAME }}.zip
           asset_name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}.zip
           asset_content_type: application/zip
+      
       - name: Upload package.json
         id: upload_metadata
         uses: actions/upload-release-asset@v1
