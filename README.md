@@ -1,7 +1,7 @@
 # Synapse for AI
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/SynapseLogo.png?v=2" alt="Synapse Logo" width="150"/>
+  <img src="https://raw.githubusercontent.com/gtrgit/synapse4ai/main/icon.png?v=2" alt="Synapse Logo" width="150"/>
   <h3>Extending Human Cognition Through AI + Knowledge Graphs</h3>
   <p>
     <a href="https://www.synapse4ai.xyz">Website</a> •

@@ -21,7 +21,7 @@
   "logseq": {
     "id": "synapse-ai",
     "title": "Synapse for AI",
-    "icon": "SynapseLogo.png"
+    "icon": "icon.png"
   },
-  "logo": "SynapseLogo.png"
+  "logo": "icon.png"
 }

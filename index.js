@@ -868,7 +868,7 @@ async function updateProviderIndicator() {
       template: `
         <div class="synapse-status">
           <a class="button" data-on-click="showSettings">
-            <img src="./SynapseLogo.png" alt="Synapse" class="synapse-logo" onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\"synapse-fallback-text\">Synapse</span>';">
+            <img src="./icon.png" alt="Synapse" class="synapse-logo" onerror="this.onerror=null; this.parentNode.innerHTML='<span class=\"synapse-fallback-text\">Synapse</span>';">
             <span class="provider-name" id="provider-name"></span>
             <span class="provider-indicator" id="provider-indicator"></span>
           </a>
