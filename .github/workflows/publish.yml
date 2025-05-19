@@ -30,8 +30,11 @@ jobs:
           cp README.md ${{ env.PLUGIN_NAME }} || true
           cp package.json ${{ env.PLUGIN_NAME }} || true
           cp SynapseLogo.png ${{ env.PLUGIN_NAME }} || true
-          cp LICENSE ${{ env.PLUGIN_NAME }} || true
+          cp LICENSE ${{ env.PLUGIN_NAME }} || true 
+          cp index.html ${{ env.PLUGIN_NAME }} || true
+          cp lsplugin.user.min.js ${{ env.PLUGIN_NAME }} || true
           cp index.js ${{ env.PLUGIN_NAME }} || true
+          cp icon.png ${{ env.PLUGIN_NAME }} || true
           
           # Create zip
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
